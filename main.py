@@ -11,7 +11,6 @@ from datetime import datetime
 
 def job():
     print("[%s] Iniciando verificação" % datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    send_mail("Iniciando", "Iniciando a verificação", "brovedan@gmail.com")
     r = requests.get('https://oap.ind.nl/oap/api/desks/AM/slots/?productKey=DOC&persons=3')
     if r.status_code == 200:
         dados = r.text.split(",")
